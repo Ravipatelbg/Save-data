@@ -992,5 +992,82 @@
 		</style>
 		<!-- Owl Carousel padding on first item with (Stage padding)-->
 		<!----------------------------------------------------------- End ----------------------------------------------------------->
+
+		<!-- 😀 blog Fillter with slider -->
+		<script>
+			  var slickoptionsblog = {
+			  dots: false,
+			  appendDots: jQuery(".slick-nav"),
+			  appendArrows: jQuery(".slick-nav"),
+			  accessibility: true,
+			  speed: 300,
+			  slidesToShow: 1,
+			  slidesToScroll: 1,
+			  rows: 2,
+			  slidesPerRow: 3,
+			  infinite: false,
+			  prevArrow: "<i class='fa-solid fa-chevron-left prevArrow'></i>",
+			  nextArrow: "<i class='fa-solid fa-chevron-right nextArrow'></i>",
+			  responsive: [
+			    {
+			      breakpoint: 992,
+			      settings: {
+				rows: 2,
+				slidesPerRow: 2,
+			      },
+			    },
+			    {
+			      breakpoint: 576,
+			      settings: {
+				rows: 2,
+				slidesPerRow: 1,
+			      },
+			    },
+			  ],
+			};
+			jQuery(document).ready(function () {
+			  jQuery(".blog-fillter-slider").slick(slickoptionsblog);
+
+			  var sliderblog = jQuery(".blog-fillter-slider");
+			  var allSlidesblog = jQuery(
+			    ".blog-fillter-slider .slick-slide > div > *"
+			  ).clone();
+			  var triggerblog = jQuery("blog-js-filter");
+
+			  var ClassFilterblog = function (object, item) {
+			    this.object = object;
+			    this.item = item;
+
+			    this.filterFunc = function () {
+			      jQuery(".active").removeClass("active");
+			      jQuery('.blog-js-filter[data-filter="' + this.item + '"]').addClass(
+				"active"
+			      );
+			      var filterSlidesblog = allSlidesblog.filter(this.item);
+
+			      // sliderblog.css({ opacity: "0", left: "50px" });
+			      sliderblog.addClass("loading");
+			      setTimeout(function () {
+				sliderblog
+				  .slick("unslick")
+				  .empty()
+				  .append(filterSlidesblog)
+				  .slick(slickoptionsblog)
+				  // .css({ opacity: "100", left: "0px" })
+				  .removeClass("loading");
+			      }, 600);
+			    };
+			  };
+
+			  jQuery(".blog-js-filter").on("click", function (e) {
+			    var attr = jQuery(this).attr("data-filter");
+			    var newFilter = new ClassFilterblog(this, attr);
+			    newFilter.filterFunc();
+			  });
+			});
+		</script>
+		<!-- blog Fillter with slider-->
+		<!----------------------------------------------------------- End ----------------------------------------------------------->
+
 	</body>
 </html>
