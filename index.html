@@ -1082,6 +1082,50 @@
 		</script>
 		<!-- blog Fillter with slider-->
 		<!----------------------------------------------------------- End ----------------------------------------------------------->
-
+		
+		<!-- 😀 Counter js -->
+		<div class="wrap">
+		    <div class="count-up">
+			<h1 class="counter-count counter-number">2954</h1>
+		    </div>
+		    <div class="count-up">
+			<h1 class="counter-count counter-number">2954</h1>
+		    </div>
+		    <div class="count-up">
+			<h1 class="counter-count counter-number">2954</h1>
+		    </div>
+		    <div class="count-up">
+			<h1 class="counter-count counter-number">2954</h1>
+		    </div>
+		</div>
+		<script>
+			var counted = 0;
+			jQuery(window).scroll(function () {
+			  var oTop = jQuery(".counter-count").offset().top - window.innerHeight;
+			  if (counted == 0 && jQuery(window).scrollTop() > oTop) {
+			    jQuery(".counter-number").each(function () {
+			      jQuery(this)
+				.prop("Counter", 0)
+				.animate(
+				  {
+				    Counter: jQuery(this).text(),
+				  },
+				  {
+				    //chnage count up speed here
+				    duration: 7000,
+				    easing: "swing",
+				    step: function (now) {
+				      jQuery(this).text(Math.ceil(now));
+				    },
+				  }
+				);
+			    });
+			    counted = 1;
+			  }
+			});
+		</script>
+		<!-- Counter js-->
+		<!----------------------------------------------------------- End ----------------------------------------------------------->
+		
 	</body>
 </html>
