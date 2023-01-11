@@ -1080,6 +1080,32 @@
 			  });
 			});
 		</script>
+		// no slider only filter Demo link : https://codepen.io/jreid/pen/naMdpx
+		<script>
+		$(document).ready(function() {
+		  $('#team-filters li a').click(function() {
+		    // fetch the class of the clicked item
+		    var ourClass = $(this).attr('class');
+
+		    // reset the active class on all the buttons
+		    $('#team-filters li').removeClass('active');
+		    // update the active state on our clicked button
+		    $(this).parent().addClass('active');
+
+		    if(ourClass == 'all') {
+		      // show all our items
+		      $('.team_fillter_list .team_fillter_list-inner').children('div.team-item').show();
+		    }
+		    else {
+		      // hide all elements that don't share ourClass
+		      $('.team_fillter_list .team_fillter_list-inner').children('div:not(.' + ourClass + ')').hide();
+		      // show all elements that do share ourClass
+		      $('.team_fillter_list .team_fillter_list-inner').children('div.' + ourClass).show();
+		    }
+		    return false;
+		  });
+		});
+		</script>
 		<!-- blog Fillter with slider-->
 		<!----------------------------------------------------------- End ----------------------------------------------------------->
 		
