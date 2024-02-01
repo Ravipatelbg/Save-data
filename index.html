@@ -1400,5 +1400,238 @@
 		</script>
 		<!-- Gallery image Lightbox -->
 		<!----------------------------------------------------------- End ----------------------------------------------------------->
+
+
+		<!-- animated-hero-section -->
+ 
+		<section class="an-hero-section-main"> <div class="an-hero-section-wrap"> <div class="an-hero-section-inner"> <div class="top-content" style="opacity: 1;"> <div class="top-content-inner"> <div class="title color-title">ABT &amp; EMVAGUSTA</div> <div class="title">GRAVEL R</div> </div> </div> <div class="empty-div"></div> <div class="page-width navigation-zigzag__sidebar-wrap"> <div class="navigation-zigzag__sidebar"> <div class="navigation-zigzag__navigation"><div class="contentitem default-highlight" id="slide_1" data-type="heading"> <div class="contentitem__inner"> <div class="contentitem__title"> <h2> German engineering<br> Italian design </h2> </div> </div> </div> <div class="contentitem" id="slide_2" data-type="heading"> <div class="contentitem__inner"> <div class="contentitem__title"> <h2> 100% carbon<br> superlight 13.4kg </h2> </div> </div> </div> <div class="contentitem" id="slide_3" data-type="heading"> <div class="contentitem__inner"> <div class="contentitem__title"> <h2> Campagnolo Ekar<br> components &amp; gear </h2> </div> </div> </div> <div class="contentitem" id="slide_4" data-type="heading"> <div class="contentitem__inner"> <div class="contentitem__title"> <h2> Powerful 55NM Mahle<br> rear wheel hub motor </h2> </div> </div> </div> </div> </div> </div> <div class="bg-image"> <div class="bg-video-inner"> <video playsinline="" autoplay="" loop="" poster="//abt-ebike.myshopify.com/cdn/shop/files/video-poster.jpg?v=1705662171&amp;width=1440" class="banner-video-background banner-video-background--max" id="product_mp4_video" muted="muted" preload="metadata"><source src="https://cdn.shopify.com/videos/c/vp/ed6f058e22fa44a08815cd8c9fa7c1a0/ed6f058e22fa44a08815cd8c9fa7c1a0.HD-720p-1.6Mbps-23528188.mp4" type="video/mp4"><img src="//abt-ebike.myshopify.com/cdn/shop/files/preview_images/ed6f058e22fa44a08815cd8c9fa7c1a0.thumbnail.0000000000_1100x.jpg?v=1706010320"></video> </div> </div> </div> </div> </section>
+
+		<script>
+			$(document).ready(function () {
+					let sections = $('.an-hero-section-main .navigation-zigzag__navigation .contentitem'); // Get all sections on the page
+
+					$(window).scroll(function () {
+						let scrollPosition = $(window).scrollTop();
+
+						sections.each(function (index) {
+							let section = $(this);
+							let sectionPosition2 = section.offset().top - (window.innerHeight * 0.5);
+
+							// if (window.innerHeight >= 1200) {
+							//   var sectionPosition2 = section.offset().top - (window.innerHeight * 0.5);
+							// } else {
+							//   var sectionPosition2 = section.offset().top - (window.innerHeight * 0.5);
+							// }
+
+							let sectionHeight = section.outerHeight();
+
+							// Check if the user is scrolling within the section
+							if (scrollPosition >= sectionPosition2 && scrollPosition < sectionPosition2 + sectionHeight) {
+								// Add classes to the corresponding section and image
+								section.addClass('highlighted-section');
+
+								// If it's the first section, add a class to indicate default highlight
+								if (index === 0) {
+									section.addClass('default-highlight');
+								} else {
+									// Remove default highlight class from other sections
+									sections.eq(0).removeClass('default-highlight');
+								}
+
+								// If it's the last section, add a class to indicate default highlight
+								if (index === sections.length - 1) {
+									section.addClass('last-section-highlight');
+								} else {
+									// Remove last-section-highlight class from other sections
+									sections.eq(sections.length - 1).removeClass('last-section-highlight');
+								}
+							} else {
+								// Remove classes if the user is outside the section
+								section.removeClass('highlighted-section');
+							}
+						});
+					});
+				});
+
+				$(document).ready(function () {
+					let opacityValue = 1 - $(window).scrollTop() / 300;
+					if (opacityValue = 1) {
+						$(".an-hero-section-main").addClass("dark-overlay");
+					}
+					$(window).scroll(function () {
+						let opacityValue = 1 - $(window).scrollTop() / 300;
+
+						// Set opacity
+						$(".top-content").css("opacity", opacityValue);
+
+						// Add or remove class based on opacity
+						if (opacityValue <= 0) {
+							$(".an-hero-section-main").addClass("dark-overlay");
+						} else {
+							$(".an-hero-section-main").removeClass("dark-overlay");
+						}
+						if (opacityValue <= 0 && opacityValue >= -0.7) {
+							$(".an-hero-section-main").removeClass("dark-overlay");
+						} else {
+							$(".an-hero-section-main").addClass("dark-overlay");
+						}
+					});
+				});
+
+				$(document).ready(function () {
+					let video = $(".an-hero-section-main #product_mp4_video")[0];
+					video.setAttribute("playsinline", "");
+					video.autoplay = true;
+					video.loop = true;
+					video.controls = false;
+					video.muted = false;
+				});  
+  
+		</script>
+		<!-- End animated-hero-section -->
+		<!----------------------------------------------------------- End ----------------------------------------------------------->
+
+
+		<!-- 360-rotate-section on scroll -->
+
+		<section class="cycle_rotate_section"> <div class="cycle_rotate_wrapper"> <div class="container-full"> <div class="title-box"> <h2 class="title">Unparalleled e-bikes in limited editions</h2> </div> <div class="cycle-container-empty"></div> <div class="cycle-container customms"> <div class="item"> <img src="//abt-ebike.myshopify.com/cdn/shop/files/bike_0.png?v=1705664880&amp;width=1203" alt="Cycle Image" srcset="//abt-ebike.myshopify.com/cdn/shop/files/bike_0.png?v=1705664880&amp;width=352 352w, //abt-ebike.myshopify.com/cdn/shop/files/bike_0.png?v=1705664880&amp;width=832 832w, //abt-ebike.myshopify.com/cdn/shop/files/bike_0.png?v=1705664880&amp;width=1200 1200w, //abt-ebike.myshopify.com/cdn/shop/files/bike_0.png?v=1705664880&amp;width=1203 1203w" width="1203" loading="lazy" class="cycleImage" style="display: block;"> <img src="//abt-ebike.myshopify.com/cdn/shop/files/bike_2.png?v=1705664879&amp;width=1282" alt="Cycle Image" srcset="//abt-ebike.myshopify.com/cdn/shop/files/bike_2.png?v=1705664879&amp;width=352 352w, //abt-ebike.myshopify.com/cdn/shop/files/bike_2.png?v=1705664879&amp;width=832 832w, //abt-ebike.myshopify.com/cdn/shop/files/bike_2.png?v=1705664879&amp;width=1200 1200w, //abt-ebike.myshopify.com/cdn/shop/files/bike_2.png?v=1705664879&amp;width=1282 1282w" width="1282" loading="lazy" class="cycleImage" style="display: none;"> <img src="//abt-ebike.myshopify.com/cdn/shop/files/bike_3.png?v=1705664879&amp;width=1200" alt="Cycle Image" srcset="//abt-ebike.myshopify.com/cdn/shop/files/bike_3.png?v=1705664879&amp;width=352 352w, //abt-ebike.myshopify.com/cdn/shop/files/bike_3.png?v=1705664879&amp;width=832 832w, //abt-ebike.myshopify.com/cdn/shop/files/bike_3.png?v=1705664879&amp;width=1200 1200w" width="1200" loading="lazy" class="cycleImage" style="display: none;"> <img src="//abt-ebike.myshopify.com/cdn/shop/files/bike_4.png?v=1705664880&amp;width=1284" alt="Cycle Image" srcset="//abt-ebike.myshopify.com/cdn/shop/files/bike_4.png?v=1705664880&amp;width=352 352w, //abt-ebike.myshopify.com/cdn/shop/files/bike_4.png?v=1705664880&amp;width=832 832w, //abt-ebike.myshopify.com/cdn/shop/files/bike_4.png?v=1705664880&amp;width=1200 1200w, //abt-ebike.myshopify.com/cdn/shop/files/bike_4.png?v=1705664880&amp;width=1284 1284w" width="1284" loading="lazy" class="cycleImage" style="display: none;"> <img src="//abt-ebike.myshopify.com/cdn/shop/files/bike_5.png?v=1705664881&amp;width=1221" alt="Cycle Image" srcset="//abt-ebike.myshopify.com/cdn/shop/files/bike_5.png?v=1705664881&amp;width=352 352w, //abt-ebike.myshopify.com/cdn/shop/files/bike_5.png?v=1705664881&amp;width=832 832w, //abt-ebike.myshopify.com/cdn/shop/files/bike_5.png?v=1705664881&amp;width=1200 1200w, //abt-ebike.myshopify.com/cdn/shop/files/bike_5.png?v=1705664881&amp;width=1221 1221w" width="1221" loading="lazy" class="cycleImage" style="display: none;"> <img src="//abt-ebike.myshopify.com/cdn/shop/files/bike_6.png?v=1705664880&amp;width=1236" alt="Cycle Image" srcset="//abt-ebike.myshopify.com/cdn/shop/files/bike_6.png?v=1705664880&amp;width=352 352w, //abt-ebike.myshopify.com/cdn/shop/files/bike_6.png?v=1705664880&amp;width=832 832w, //abt-ebike.myshopify.com/cdn/shop/files/bike_6.png?v=1705664880&amp;width=1200 1200w, //abt-ebike.myshopify.com/cdn/shop/files/bike_6.png?v=1705664880&amp;width=1236 1236w" width="1236" loading="lazy" class="cycleImage" style="display: none;"> <img src="//abt-ebike.myshopify.com/cdn/shop/files/bike_7.png?v=1705664880&amp;width=1242" alt="Cycle Image" srcset="//abt-ebike.myshopify.com/cdn/shop/files/bike_7.png?v=1705664880&amp;width=352 352w, //abt-ebike.myshopify.com/cdn/shop/files/bike_7.png?v=1705664880&amp;width=832 832w, //abt-ebike.myshopify.com/cdn/shop/files/bike_7.png?v=1705664880&amp;width=1200 1200w, //abt-ebike.myshopify.com/cdn/shop/files/bike_7.png?v=1705664880&amp;width=1242 1242w" width="1242" loading="lazy" class="cycleImage" style="display: none;"> <img src="//abt-ebike.myshopify.com/cdn/shop/files/bike_1_2a83e577-033d-43e6-9d10-514a3129be46.png?v=1706502334&amp;width=1259" alt="Cycle Image" srcset="//abt-ebike.myshopify.com/cdn/shop/files/bike_1_2a83e577-033d-43e6-9d10-514a3129be46.png?v=1706502334&amp;width=352 352w, //abt-ebike.myshopify.com/cdn/shop/files/bike_1_2a83e577-033d-43e6-9d10-514a3129be46.png?v=1706502334&amp;width=832 832w, //abt-ebike.myshopify.com/cdn/shop/files/bike_1_2a83e577-033d-43e6-9d10-514a3129be46.png?v=1706502334&amp;width=1200 1200w, //abt-ebike.myshopify.com/cdn/shop/files/bike_1_2a83e577-033d-43e6-9d10-514a3129be46.png?v=1706502334&amp;width=1259 1259w" width="1259" loading="lazy" class="cycleImage" style="display: none;"> <img src="//abt-ebike.myshopify.com/cdn/shop/files/bike_8.png?v=1706110387&amp;width=1203" alt="Cycle Image" srcset="//abt-ebike.myshopify.com/cdn/shop/files/bike_8.png?v=1706110387&amp;width=352 352w, //abt-ebike.myshopify.com/cdn/shop/files/bike_8.png?v=1706110387&amp;width=832 832w, //abt-ebike.myshopify.com/cdn/shop/files/bike_8.png?v=1706110387&amp;width=1200 1200w, //abt-ebike.myshopify.com/cdn/shop/files/bike_8.png?v=1706110387&amp;width=1203 1203w" width="1203" loading="lazy" class="cycleImage" style="display: none;"> </div> </div> <div class="partner-wrap"> <div class="partner-lists"> <div class="partner-col"> <p>Tuned by ABT</p> <div class="img-box"> <img src="//abt-ebike.myshopify.com/cdn/shop/files/abt.svg?v=1705661862&amp;width=104" alt="Tuned by ABT " srcset="//abt-ebike.myshopify.com/cdn/shop/files/abt.svg?v=1705661862&amp;width=104 104w" width="104" loading="lazy"> </div> </div> <div class="partner-col"> <p>Made in</p> <div class="img-box"> <img src="//abt-ebike.myshopify.com/cdn/shop/files/mv-agusta.svg?v=1705661862&amp;width=102" alt="Made in by MV Agusta" srcset="//abt-ebike.myshopify.com/cdn/shop/files/mv-agusta.svg?v=1705661862&amp;width=102 102w" width="102" loading="eager"> </div> <p>by MV Agusta</p> </div> </div> </div> </div> </div> </section>
+
+		<script>
+			$(document).ready(function () {
+				reOrder2();
+				$(window).resize(reOrder2);
+		
+				function reOrder2() {
+					let sectionMain = $('.cycle_rotate_section');
+					let sectionHeight = sectionMain.height();
+					let topContent = sectionMain.position().top - 73;
+		
+					let imagesWrapper = $('.cycle-container');
+					let rightHeight = imagesWrapper.height();
+		
+					let bottomContent = topContent + sectionHeight - rightHeight - 0;
+					let images = $('img', imagesWrapper);
+		
+					let mq = window.matchMedia('(min-width: 320px)');
+					if (mq.matches) {
+						$(images[0]).show();
+		
+						$(window).scroll(function () {
+							let scroll = $(window).scrollTop();
+							imagesWrapper.addClass('customms');
+							if (scroll > topContent && scroll < bottomContent) {
+								imagesWrapper.removeClass('posAbs').addClass('posFix');
+								sectionMain.removeClass('posAbs').addClass('posFix');
+								let index = Math.floor(((scroll - topContent) / (bottomContent - topContent)) * images.length);
+		
+								images.map((i, img) => {
+									$(img).toggle(i === index)
+								});
+							} else if (scroll > bottomContent) {
+								imagesWrapper.removeClass('posFix').addClass('posAbs');
+								sectionMain.removeClass('posFix').addClass('posAbs');
+								$(images[images.length - 1]).show();
+							} else if (scroll < topContent) {
+								imagesWrapper.removeClass('posFix');
+								sectionMain.removeClass('posFix');
+							}
+						});
+					} else {
+						imagesWrapper.removeClass('customms posAbs posFix');
+						sectionMain.removeClass('posAbs posFix ');
+					}
+				}
+			});
+		</script>
+		<!-- End 360-rotate-section on scroll -->
+		<!----------------------------------------------------------- End ----------------------------------------------------------->
+		
+		
+		<!-- is--scrolling-animated-section fade in-out -->
+		<section class="navigation-wrapper"> <div class="container-fluid"> <div class="navigation-zigzag__inner--main"> <div class="navigation-zigzag__sidebar"> <div class="navigation-zigzag__navigation"> <div class="contentitem highlighted-section" id="slideone"> <div class="contentitem__inner"> <div class="contentitem__title"> <h2>shopify ecommerce</h2> </div> <div class="contentitem__hideable" style="--div-height: 168.5px;"> <div class="contentitem__subtitle"> <h5>Ein Shop muss ansprechen.</h5> </div> <div class="contentitem__desc"> <p>In jeder Art und Weise. Emotionen, Klarheit, Einfachheit. Enim ullamco aliquip ad consectetur magna lorem occaecat.</p> </div> <div class="contentitem__btn"> <a href="#">learn more</a> </div> </div> </div> </div> <div class="contentitem" id="slidetwo"> <div class="contentitem__inner"> <div class="contentitem__title"> <h2>Performance marketing</h2> </div> <div class="contentitem__hideable" style="--div-height: 168.5px;"> <div class="contentitem__subtitle"> <h5>Wir bringen Ihren ROAS zu fliegen.</h5> </div> <div class="contentitem__desc"> <p>Bewährte Strategien, ansprechende Visuals &amp; Datengetrie-ben. Enim ullamco pe aliquip ad consectetur peo.</p> </div> <div class="contentitem__btn"> <a href="#">learn more</a> </div> </div> </div> </div> <div class="contentitem" id="slidethree"> <div class="contentitem__inner"> <div class="contentitem__title"> <h2>ERP integrationen</h2> </div> <div class="contentitem__hideable" style="--div-height: 168.5px;"> <div class="contentitem__subtitle"> <h5>Wenn alles zusammenpasst.</h5> </div> <div class="contentitem__desc"> <p>Amet amet ea eiusmod nostrud deserunt aute mollit sunt per. Enim che ullamco pe aliquip ad consectetur magna.</p> </div> <div class="contentitem__btn"> <a href="#">learn more</a> </div> </div> </div> </div> </div> </div> <div class="navigation-zigzag__content"> <div id="slideone" class="navigation-zigzag__content-section highlighted-image"> <div class="zigzag__inner--content"> <div class="imgmain"> <img src="https://cdn.shopify.com/s/files/1/0684/9721/1688/files/slider-image-1-trans.png?v=1705398658" class="object-cover w-full block" alt="Slider Image"> </div> </div> </div> <div id="slidetwo" class="navigation-zigzag__content-section"> <div class="zigzag__inner--content"> <div class="imgmain"> <img src="https://cdn.shopify.com/s/files/1/0684/9721/1688/files/slider-image-2.png?v=1705044808" class="object-cover w-full block" alt="Slider Image"> </div> </div> </div> <div id="slidethree" class="navigation-zigzag__content-section"> <div class="zigzag__inner--content"> <div class="imgmain"> <img src="https://cdn.shopify.com/s/files/1/0684/9721/1688/files/slider-image-3.jpg?v=1705044809" class="object-cover w-full block" alt="Slider Image"> </div> </div> </div> </div> </div> </div> </section>
+		<script>
+			function updateDivHeights() {
+				$(".contentitem .contentitem__hideable").each(function () {
+					// Temporarily show the div to get its actual height
+					// $(this).show();
+					$(this).addClass('show');
+
+					// Get the height of the current div
+					var divHeight = $(this).height();
+
+					// Set the inline CSS variable with the calculated height
+					$(this).css("--div-height", divHeight + "px");
+
+					// Hide the div again
+					// $(this).hide();
+					$(this).removeClass('show');
+				});
+			}
+
+			$(document).ready(function () {
+				// Initial height calculation
+				updateDivHeights();
+
+				// Update heights on window resize
+				$(window).resize(function () {
+					updateDivHeights();
+				});
+			});
+			$(document).ready(function () {
+				let sections = $('.navigation-zigzag__navigation .contentitem'); // Get all sections on the page
+				let images = $('.navigation-zigzag__content .navigation-zigzag__content-section'); // Get all images in the fixed-image div
+
+				// Function to highlight the section and image at a given index
+				function highlightSectionAndImage(index) {
+					sections.eq(index).addClass('highlighted-section');
+					images.eq(index).addClass('highlighted-image');
+				}
+
+				// Function to remove highlighting from all sections and images
+				function removeHighlighting() {
+					sections.removeClass('highlighted-section');
+					images.removeClass('highlighted-image');
+				}
+
+				$(window).scroll(function () {
+					let scrollPosition = $(window).scrollTop();
+					let windowHeight = $(window).height();
+
+					sections.each(function (index) {
+						let section = $(this);
+						let sectionPosition = section.offset().top - (window.innerHeight * 0.55);
+						if (window.innerWidth >= 992) {
+							sectionPosition = section.offset().top - (window.innerHeight * 0.55);
+						} else {
+							sectionPosition = section.offset().top - 400;
+						}
+						let sectionHeight = section.outerHeight();
+
+						// Check if scrolling down and within the section
+						if (scrollPosition >= sectionPosition && scrollPosition < sectionPosition + sectionHeight) {
+							removeHighlighting(); // Remove highlighting from all sections and images
+							highlightSectionAndImage(index); // Highlight the current section and image
+						}
+
+						// Check if scrolling up and at the top of the page
+						if (scrollPosition === 0) {
+							removeHighlighting(); // Remove highlighting from all sections and images
+							highlightSectionAndImage(0); // Always highlight the first section and image
+						}
+
+						// Check if scrolling up and at the bottom of the page
+						if (scrollPosition + windowHeight === $(document).height()) {
+							removeHighlighting(); // Remove highlighting from all sections and images
+							highlightSectionAndImage(sections.length - 1); // Always highlight the bottom sections and image
+						}
+					});
+				});
+			});
+		</script>
+		<!-- End is--scrolling-animated-section fade in-out -->
+		<!----------------------------------------------------------- End ----------------------------------------------------------->
+
+		
+
 	</body>
 </html>
