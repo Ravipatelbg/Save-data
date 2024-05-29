@@ -891,6 +891,28 @@
             );
         });
       });
+
+      $(document).ready(function() {
+          // Function to handle smooth scrolling with offset
+          const smoothScroll = (target) => {
+              $('html, body').animate({
+                  scrollTop: $(target).offset().top - 80
+              }, 1000);
+          };
+      
+          // Smooth scroll on click
+          $('a[href^="#"]').on('click', function(event) {
+              event.preventDefault();
+              const target = $(this).attr('href');
+              smoothScroll(target);
+          });
+      
+          // Check if there's a hash in the URL on page load
+          const hash = window.location.hash;
+          if (hash) {
+              smoothScroll(hash);
+          }
+      });
     </script>
     <!-- Smooth Scroll with Offset jQuery -->
     <!----------------------------------------------------------- End ----------------------------------------------------------->
